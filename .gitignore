@@ -1,0 +1,26 @@
+# Ignore Conda virtual environment
+Traffic_System/
+
+# Python cache and build files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+
+# Environment files
+.env/
+env/
+venv/
+*.env
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.code-workspace
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
