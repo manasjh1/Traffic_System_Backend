@@ -136,7 +136,7 @@ GET  /api/dashboard/today      # Today's activity
 ### Common Issues
 
 **Installation Problems**:
-- Use Python 3.11 for better package compatibility
+- Use Python 3.12.1 for better package compatibility
 - Install PyTorch separately if needed: `pip install torch torchvision`
 
 **Model Loading Errors**:
