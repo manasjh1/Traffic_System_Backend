@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CTMS Dashboard</title>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>College Traffic Monitoring System — Dashboard</h1>
+    <nav>
+      <button id="tab-dashboard" class="active">Dashboard</button>
+      <button id="tab-logs">Logs</button>
+      <button id="tab-upload">Upload</button>
+      <button id="refresh">Refresh</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Dashboard -->
+    <section id="dashboard" class="page">
+      <div class="cards">
+        <div class="card">
+          <h3>Total events</h3>
+          <div id="total-events" class="big">0</div>
+        </div>
+        <div class="card">
+          <h3>Total violations</h3>
+          <div id="total-violations" class="big">0</div>
+        </div>
+        <div class="card">
+          <h3>Today</h3>
+          <div id="today-events" class="big">0</div>
+        </div>
+      </div>
+
+      <div class="chart-wrap">
+        <canvas id="weeklyChart"></canvas>
+      </div>
+    </section>
+
+    <!-- Logs -->
+    <section id="logs" class="page hidden">
+      <div class="controls">
+        <input id="filter-plate" placeholder="Filter by plate (partial)" />
+        <button id="btn-filter">Filter</button>
+        <button id="btn-clear-filter">Clear</button>
+      </div>
+      <div class="table-wrap">
+        <table id="logs-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Plate</th>
+              <th>Vehicle</th>
+              <th>Violation</th>
+              <th>Helmet</th>
+              <th>Speed</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Upload -->
+    <section id="upload" class="page hidden">
+      <div class="upload-box">
+        <h2>Upload image for detection</h2>
+        <input type="file" id="file-input" accept="image/*" />
+        <button id="btn-upload">Upload & Detect</button>
+
+        <div id="upload-result" class="result hidden">
+          <h3>Result</h3>
+          <pre id="result-json"></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>CTMS • Backend: http://127.0.0.1:8000</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
